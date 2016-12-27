@@ -44,14 +44,10 @@ public class MyBot {
                         
                         if (left.owner == myID && right.owner == myID && up.owner == myID && down.owner == myID && site.strength > 100) {
                             moves.add(new Move(new Location(x, y), Direction.EAST));
-                        } else if (left.owner == myID && right.owner == myID && up.owner == myID && down.owner == myID && (site.strength+left.strength > 120)) {
+                        } else if (state == 0 && left.owner == myID && (site.strength+left.strength > 80) && (site.strength + left.strength < 130)) {
                             moves.add(new Move(new Location(x, y), Direction.WEST));
-                        } else if (left.owner == myID && right.owner == myID && up.owner == myID && down.owner == myID && (site.strength+right.strength > 120)) {
-                            moves.add(new Move(new Location(x, y), Direction.EAST));
-                        } else if (left.owner == myID && right.owner == myID && up.owner == myID && down.owner == myID && (site.strength+down.strength > 120)) {
+                        } else if (state == 0 && down.owner == myID && (site.strength+down.strength > 80) && (site.strength + down.strength < 130)) {
                             moves.add(new Move(new Location(x, y), Direction.SOUTH));
-                        } else if (left.owner == myID && right.owner == myID && up.owner == myID && down.owner == myID && (site.strength+up.strength > 120)) {
-                            moves.add(new Move(new Location(x, y), Direction.NORTH));
                         } else {
 
                         switch (state) {
